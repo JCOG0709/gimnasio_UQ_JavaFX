@@ -9,6 +9,12 @@ public class Gimnasio {
     private ArrayList<Reserva> listaReserva = new ArrayList<>();
     private ArrayList<Membresia> listamembresia = new ArrayList<>();
 
+    public Gimnasio(){}
+
+    public Gimnasio(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getNombre() {
         return nombre;
     }
