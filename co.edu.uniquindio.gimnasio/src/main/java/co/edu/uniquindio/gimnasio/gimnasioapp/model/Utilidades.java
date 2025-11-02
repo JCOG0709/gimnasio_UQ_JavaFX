@@ -2,8 +2,8 @@ package co.edu.uniquindio.gimnasio.gimnasioapp.model;
 
 import java.util.Scanner;
 
-public class ClaseUtil {
-    public ClaseUtil() {
+public class Utilidades {
+    public Utilidades() {
     }
 
     public static String leerStringConsola(String mensaje) {

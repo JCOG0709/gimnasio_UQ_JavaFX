@@ -9,16 +9,18 @@ public class Gimnasio {
     private ArrayList<Reserva> listaReserva = new ArrayList<>();
     private ArrayList<Membresia> listamembresia = new ArrayList<>();
     private ArrayList<Entrenador> listaEntrenadores;
+    private ArrayList<Clase> listaClases;
 
     public Gimnasio(){}
 
-    public Gimnasio(String nombre, ArrayList<Persona> listaPersonas, ArrayList<Plan> listaPlan, ArrayList<Reserva> listaReserva, ArrayList<Entrenador> listaEntrenadores, ArrayList<Membresia> listamembresia) {
+    public Gimnasio(String nombre, ArrayList<Persona> listaPersonas, ArrayList<Plan> listaPlan, ArrayList<Reserva> listaReserva, ArrayList<Membresia> listamembresia, ArrayList<Entrenador> listaEntrenadores, ArrayList<Clase> listaClases) {
         this.nombre = nombre;
         this.listaPersonas = listaPersonas;
         this.listaPlan = listaPlan;
         this.listaReserva = listaReserva;
-        this.listaEntrenadores = listaEntrenadores;
         this.listamembresia = listamembresia;
+        this.listaEntrenadores = listaEntrenadores;
+        this.listaClases = listaClases;
     }
 
     public String getNombre() {
@@ -64,4 +66,18 @@ public class Gimnasio {
     public ArrayList<Entrenador> getListaEntrenadores() {
         return listaEntrenadores;
     }
+
+    public ArrayList<Clase> getListaClases() {
+        return listaClases;
+    }
+    public Clase obtenerClase(String nombreClase){
+        Clase clase = null;
+        for(int i=0;i<getListaClases().size();i++){
+            if(getListaClases().get(i).getNombre().equals(nombreClase)){
+                clase = getListaClases().get(i);
+            }
+        }
+        return clase;
+    }
+
 }

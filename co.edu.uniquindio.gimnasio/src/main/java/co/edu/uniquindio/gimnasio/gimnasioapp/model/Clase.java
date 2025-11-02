@@ -11,11 +11,13 @@ public class Clase {
     private Entrenador entrenadorAsignado;
     private ArrayList<Usuario> listaUsuarios = new ArrayList<>();
 
-    public Clase(String nombre, TipoClases tipoClase, LocalTime horaInicio, int cupoMaximo) {
+    public Clase(String nombre, TipoClases tipoClase, LocalTime horaInicio, int cupoMaximo, Entrenador entrenadorAsignado, ArrayList<Usuario> listaUsuarios) {
         this.nombre = nombre;
         this.tipoClase = tipoClase;
         this.horaInicio = horaInicio;
         this.cupoMaximo = cupoMaximo;
+        this.entrenadorAsignado = entrenadorAsignado;
+        this.listaUsuarios = listaUsuarios;
     }
 
     public String getNombre() {
@@ -64,5 +66,10 @@ public class Clase {
 
     public void setListaUsuarios(ArrayList<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
+    }
+
+    public void asignarEntrenador(Entrenador entrenador) {
+        this.entrenadorAsignado = entrenador;
+        System.out.println("✅ Entrenador asignado a la clase: " + nombre);
     }
 }
