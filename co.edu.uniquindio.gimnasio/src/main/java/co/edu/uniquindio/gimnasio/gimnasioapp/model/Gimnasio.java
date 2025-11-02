@@ -8,6 +8,7 @@ public class Gimnasio {
     private ArrayList<Plan> listaPlan = new ArrayList<>();
     private ArrayList<Reserva> listaReserva = new ArrayList<>();
     private ArrayList<Membresia> listamembresia = new ArrayList<>();
+    private ArrayList<Entrenador> listaEntrenadores;
 
     public Gimnasio(){}
 
@@ -53,5 +54,9 @@ public class Gimnasio {
 
     public void setListamembresia(ArrayList<Membresia> listamembresia) {
         this.listamembresia = listamembresia;
+    }
+
+    public ArrayList<Entrenador> getListaEntrenadores() {
+        return listaEntrenadores;
     }
 }
