@@ -10,17 +10,19 @@ public class Gimnasio {
     private ArrayList<Membresia> listamembresia = new ArrayList<>();
     private ArrayList<Entrenador> listaEntrenadores;
     private ArrayList<Clase> listaClases;
+    private ArrayList<Usuario> listaUsuarios;
 
     public Gimnasio(){}
 
-    public Gimnasio(String nombre, ArrayList<Persona> listaPersonas, ArrayList<Plan> listaPlan, ArrayList<Reserva> listaReserva, ArrayList<Membresia> listamembresia, ArrayList<Entrenador> listaEntrenadores, ArrayList<Clase> listaClases) {
+    public Gimnasio(String nombre, ArrayList<Persona> listaPersonas, ArrayList<Reserva> listaReserva, ArrayList<Plan> listaPlan, ArrayList<Membresia> listamembresia, ArrayList<Entrenador> listaEntrenadores, ArrayList<Clase> listaClases, ArrayList<Usuario> listaUsuarios) {
         this.nombre = nombre;
         this.listaPersonas = listaPersonas;
-        this.listaPlan = listaPlan;
         this.listaReserva = listaReserva;
+        this.listaPlan = listaPlan;
         this.listamembresia = listamembresia;
         this.listaEntrenadores = listaEntrenadores;
         this.listaClases = listaClases;
+        this.listaUsuarios = listaUsuarios;
     }
 
     public String getNombre() {
@@ -70,6 +72,11 @@ public class Gimnasio {
     public ArrayList<Clase> getListaClases() {
         return listaClases;
     }
+
+    public ArrayList<Usuario> getListaUsuarios() {
+        return listaUsuarios;
+    }
+
     public Clase obtenerClase(String nombreClase){
         Clase clase = null;
         for(int i=0;i<getListaClases().size();i++){
@@ -79,5 +86,15 @@ public class Gimnasio {
         }
         return clase;
     }
+    public Usuario obtenerUsuario(String identificacion){
+        Usuario usuario = null;
+        for(int i=0;i<getListaUsuarios().size();i++){
+            if(getListaUsuarios().get(i).getIdentificacion().equals(identificacion)){
+                usuario = getListaUsuarios().get(i);
+            }
+        }
+        return usuario;
+    }
+
 
 }

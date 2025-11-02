@@ -7,7 +7,7 @@ public abstract class Membresia {
     private  double costo;
     private LocalDate fechaInicio;
     private LocalDate fechaFinal;
-    private boolean estado;
+    private boolean activa;
     private PeriodoMembresia periodoMembresia;
 
     public Membresia(){}
@@ -17,7 +17,7 @@ public abstract class Membresia {
         this.costo = costo;
         this.fechaInicio = fechaInicio;
         this.fechaFinal = fechaFinal;
-        this.estado = estado;
+        this.activa = activa;
         this.periodoMembresia = periodoMembresia;
     }
 
@@ -53,12 +53,12 @@ public abstract class Membresia {
         this.fechaFinal = fechaFinal;
     }
 
-    public boolean isEstado() {
-        return estado;
+    public boolean isActiva() {
+        return activa;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setActiva(boolean estado) {
+        this.activa = estado;
     }
 
     public PeriodoMembresia getPeriodoMembresia() {

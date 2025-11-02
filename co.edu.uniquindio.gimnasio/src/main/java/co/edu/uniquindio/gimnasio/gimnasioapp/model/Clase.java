@@ -72,4 +72,8 @@ public class Clase {
         this.entrenadorAsignado = entrenador;
         System.out.println("✅ Entrenador asignado a la clase: " + nombre);
     }
+    public void inscribirUsuario(Usuario usuario) {
+        this.listaUsuarios.add(usuario);
+        System.out.println("👤 Usuario registrado en la clase: " + nombre);
+    }
 }

@@ -54,5 +54,34 @@ public class Administrador extends UsuarioSistema{
         }
 
     }
+    public void controlarAcceso() {
+        String idUsuario = Utilidades.leerStringConsola("Ingrese identificación del usuario: ");
+        Usuario usuario = gimnasio.obtenerUsuario(idUsuario);
+        if (usuario == null) {
+            System.out.println("❌ Usuario no encontrado.");
+            return;
+        }
+        if(!usuario.tieneMembresiaActiva()){
+            System.out.println("❌ Membresía inactiva. No puede ingresar.");
+            return;
+        }
+        String nombreClase = Utilidades.leerStringConsola("Ingrese el nombre de la clase a la que desea acceder: ");
+        Clase clase = gimnasio.obtenerClase(nombreClase);
 
-}
+        if(clase == null){
+            System.out.println("❌ La clase no existe.");
+            return;
+        }
+
+        if(clase.getListaUsuarios().size() >= clase.getCupoMaximo()){
+            System.out.println("❌ La clase está llena.");
+            return;
+        }
+        clase.inscribirUsuario(usuario);
+
+        System.out.println("✅ Acceso concedido a la clase: " + clase.getNombre());
+
+    }
+
+
+    }
