@@ -12,8 +12,13 @@ public class Gimnasio {
 
     public Gimnasio(){}
 
-    public Gimnasio(String nombre) {
+    public Gimnasio(String nombre, ArrayList<Persona> listaPersonas, ArrayList<Plan> listaPlan, ArrayList<Reserva> listaReserva, ArrayList<Entrenador> listaEntrenadores, ArrayList<Membresia> listamembresia) {
         this.nombre = nombre;
+        this.listaPersonas = listaPersonas;
+        this.listaPlan = listaPlan;
+        this.listaReserva = listaReserva;
+        this.listaEntrenadores = listaEntrenadores;
+        this.listamembresia = listamembresia;
     }
 
     public String getNombre() {

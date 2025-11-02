@@ -10,11 +10,22 @@ public class Administrador extends UsuarioSistema{
 
     public void registrarEntrenador() {
 
-        Entrenador nuevo = Entrenador.RegistrarEntrenador(); // <-- se encarga Entrenador
+        Entrenador nuevo = Entrenador.registrarEntrenador(); // <-- se encarga Entrenador
 
         gimnasio.getListaEntrenadores().add(nuevo);
 
         System.out.println("\n✅ Entrenador agregado al gimnasio correctamente.");
+    }
+
+    public void ModificarEntrenador() {
+        String id = ClaseUtil.leerStringConsola("Ingrese la identificacion del entrenador a modificar: ");
+        Entrenador resultado = Entrenador.obtenerEntrenador(gimnasio, id);
+        if(resultado != null) {
+            Entrenador.modificarEntrenador(resultado);
+            System.out.println("✅ Entrenador modificado correctamente.");
+        } else {
+            System.out.println("❌ No existe un entrenador con ese ID.");
+        }
     }
 
 
