@@ -3,6 +3,7 @@ package co.edu.uniquindio.gimnasio.gimnasioapp.model;
 public abstract class UsuarioSistema extends Persona{
     private String password;
 
+
     public UsuarioSistema() {}
     public UsuarioSistema(String nombre, String apellido, String identificacion,
                           int edad, String telefono, String password) {

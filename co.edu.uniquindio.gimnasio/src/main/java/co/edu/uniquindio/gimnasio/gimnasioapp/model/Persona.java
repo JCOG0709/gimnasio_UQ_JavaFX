@@ -6,6 +6,7 @@ public abstract class Persona {
     private String identificacion;
     private int edad;
     private String telefono;
+    private Gimnasio ownedByGimnasio;
 
     public Persona(){}
     public Persona(String nombre, String apellido, String identificacion, int edad, String telefono) {
@@ -54,6 +55,14 @@ public abstract class Persona {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public Gimnasio getOwnedByGimnasio() {
+        return ownedByGimnasio;
+    }
+
+    public void setOwnedByGimnasio(Gimnasio ownedByGimnasio) {
+        this.ownedByGimnasio = ownedByGimnasio;
     }
 
     @Override
