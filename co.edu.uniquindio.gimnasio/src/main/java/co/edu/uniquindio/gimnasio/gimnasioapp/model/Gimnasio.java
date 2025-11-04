@@ -95,6 +95,43 @@ public class Gimnasio {
         }
         return usuario;
     }
+    public Usuario crearUsuario(Usuario usuario){
+        Usuario usuarioEncontrado = obtenerUsuario(usuario.getIdentificacion());
+        if(usuarioEncontrado == null){
+            Usuario usuarioNuevo = new Usuario();
+            usuarioNuevo.setNombre(usuario.getNombre());
+            usuarioNuevo.setApellido(usuario.getApellido());
+            usuarioNuevo.setEdad(usuario.getEdad());
+            usuarioNuevo.setTelefono(usuario.getTelefono());
+            usuarioNuevo.setIdentificacion(usuario.getIdentificacion());
+
+            getListaUsuarios().add(usuario);
+
+            return usuario;
+        }else{
+            return null;
+        }
+    }
+    public boolean borrarusuario(String identificacion){
+        Usuario usuarioBorrar = obtenerUsuario(identificacion);
+        if(usuarioBorrar != null){
+            getListaUsuarios().remove(usuarioBorrar);
+            return true;
+        }
+        return false;
+    }
+
+
+    public Usuario obtenerUsuario(String identificacion){
+        Usuario usuarioEncontrado = null;
+        for(Persona persona : getListaUsuarios()){
+            if(persona.getIdentificacion().equals(identificacion) && persona instanceof Usuario){
+                usuarioEncontrado = (Usuario) persona;
+                break;
+            }
+        }
+        return usuarioEncontrado;
+    }
 
 
 }

@@ -5,7 +5,7 @@ import co.edu.uniquindio.gimnasio.gimnasioapp.model.*;
 public class DataUtil {
 
     public static Gimnasio inicializarDatos(){
-        Gimnasio gimnasio = new Gimnasio("Gimnacio Uq");
+        Gimnasio gimnasio = new Gimnasio("Gimnasio Uq");
 
         Estudiante estudiante1 = new Estudiante();
         estudiante1.setNombre("Sebastian");
